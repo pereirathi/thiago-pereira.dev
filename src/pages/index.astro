@@ -1,72 +1,101 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Thiago Pereira">
-	<main>
-		<h1>Thiago Pereira <br/><span class="text-gradient">Front-end Enginner</span></h1>
-		<img src='src/assets/thiago.webp' alt='thiago'/>
-		<p>He / him</p>
-		<p class="about">
-			Passionate about car racing, and a good weissbier 🍺 ! 
-			<br/>
-			Gamer in free time and react and rust enthusiast. 
-		</p>
-	</main>
+  <main>
+    <h1>
+      Thiago Pereira <br /><span class="text-gradient">Front-end Enginner</span>
+    </h1>
+    <picture>
+      <img
+        src="src/assets/thiago.webp"
+        alt="thiago"
+        decoding="async"
+        loading="lazy"
+      />
+    </picture>
+
+    <p class="about">
+      Passionate about car racing, and a good weissbier 🍺 !
+      <br />
+      Gamer in free time and react and rust enthusiast.
+    </p>
+
+    <div class="social-list">
+      <ul>
+        <li>Linkedin</li>
+        <li>Resume</li>
+        <li>Github</li>
+      </ul>
+    </div>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 2rem;
-		max-width: 80ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-		color: white;
-	}
-	img {
-		border-radius: 10%;
-		width: 200px;
-		height: 200px;
-	}
-	p{
-		color: black;
-		font-size: large;
-		font-weight: bold;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.about {
-		line-height: 1.6;
-		margin: 2rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: rgb(214 243 31 / 90%);
-		padding: 2rem;
-		border-radius: 0.4rem;
-	}
-	.about code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.about strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  main {
+    margin: auto;
+    padding: 2rem;
+    max-width: 100ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    color: white;
+  }
+  img {
+    width: 100px;
+    height: 137px;
+    object-fit: cover;
+    border-radius: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http%3A//www.w3.org/2000/svg'xmlns%3Axlink='http%3A//www.w3.org/1999/xlink' viewBox='0 0 1280 853'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='.5'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter='url(%23b)' x='0' y='0' height='100%25' width='100%25' xlink%3Ahref='data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII='%3E%3C/image%3E%3C/svg%3E");
+  }
+  p {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .about {
+    line-height: 1.6;
+    margin: 2rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: rgb(214 243 31 / 90%);
+    padding: 2rem;
+    border-radius: 0.4rem;
+  }
+  .social-list {
+    line-height: 1.6;
+    margin: 2rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    padding: 2rem;
+    border-radius: 0.4rem;
+    background-color: rgb(84 43 236 / 90%);
+  }
+  .about code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .about strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
 </style>
