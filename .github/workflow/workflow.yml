@@ -13,14 +13,21 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+      - name: Install, build, and upload...
+        uses: withastro/action@v0
 
-      - name: Install and Build 🔧 
+      - name: Install and Build 🔧
         run: |
           npm install
           npm run build
 
-      - name: Deploy 🚀🚀🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: build       
+        deploy:
+          needs: build
+          runs-on: ubuntu-latest
+          environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+          steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
