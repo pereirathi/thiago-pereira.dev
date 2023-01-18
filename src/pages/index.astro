@@ -1,62 +1,163 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Thiago Pereira">
   <main>
-    <h1>
-      Thiago Pereira <br /><span class="text-gradient">Front-end Enginner</span>
-    </h1>
-    <picture>
-      <img
-        src="src/assets/thiago.webp"
-        alt="thiago"
-        decoding="async"
-        loading="lazy"
-      />
-    </picture>
-
+    <header>
+      <div class="title">
+      <span>Hi<object data="src/assets/wave_hand.svg" width="32" name="waveHand"></object></span>
+      <h1>
+        I'm Thiago Pereira <br />
+      </h1>
+      <h2><span class="text-gradient">Senior Front-end Enginner at Ze Delivery</span></h2>
+       </div>
+      <picture>
+        <img
+          src="src/assets/thiago.webp"
+          alt="thiago"
+          decoding="async"
+          loading="lazy"
+        />
+      </picture>
+    </header>
     <p class="about">
       Passionate about car racing, and a good weissbier 🍺 !
       <br />
       Gamer in free time and react and rust enthusiast.
     </p>
 
+    
+
+    <section class="skills">
+      <h3>React</h3> <div class="line"/>
+      <br />
+
+      <h3>React Native</h3> <div class="line2"/>
+      <br />
+
+      <h3>Typescript</h3> <div class="line3"/>
+      <br />
+
+      <h3>Javascript</h3> <div class="line4"/>
+      <br />
+
+      <h3>Rust </h3> <div class="line5"/>
+      <br />
+    </section>
+
     <div class="social-list">
+      <text>Get in Touch</text>
+      <br />
       <ul>
-        <li>Linkedin</li>
-        <li>Resume</li>
-        <li>Github</li>
+        <li><object data="src/assets/gmail_icon.svg" width="32" name="gmail"></object></li>
+        <li><object data="src/assets/github_icon.svg" width="32" name="github"></object></li>
+        <li>
+          <a href="https://www.linkedin.com/in/thiago-pereira-aa9a3817/">
+          <object data="src/assets/linkedin_icon.svg" width="32" name="linkedin"></object>
+        </a>
+      </li>
       </ul>
     </div>
+    <Footer /> 
   </main>
 </Layout>
 
 <style>
   main {
     margin: auto;
-    padding: 2rem;
     max-width: 100ch;
+  }
+
+
+
+  @media (min-width: 1200px) {
+		 img {
+			width: 330px;
+		}
+	}
+  @media (min-width: 750px) {
+		 {
+			
+		}
+	}
+  header {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    justify-content: space-between;
+    width: 100%;
   }
   h1 {
     font-size: 3rem;
     font-weight: 800;
-    margin: 0;
+    margin: 0.5rem;
     color: white;
   }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    color: white;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    color: white;
+    width: 60%;
+  }
   img {
-    width: 100px;
-    height: 137px;
-    object-fit: cover;
-    border-radius: 100%;
+    width: 220px;
+
     object-fit: cover;
     background-size: cover;
+    border-radius: 1.5%;
+    align-content: flex-start;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http%3A//www.w3.org/2000/svg'xmlns%3Axlink='http%3A//www.w3.org/1999/xlink' viewBox='0 0 1280 853'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='.5'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter='url(%23b)' x='0' y='0' height='100%25' width='100%25' xlink%3Ahref='data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII='%3E%3C/image%3E%3C/svg%3E");
   }
   p {
     color: black;
     font-size: large;
     font-weight: bold;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+
+  ul li {
+    display: inline;
+    margin: 0 1rem;
+  }
+
+  .line{
+  width: 90%;
+  border-bottom: 1px solid rgb(238, 235, 235);
+  }
+
+  .line2{
+  width: 85%;
+  border-bottom: 1px solid rgb(238, 235, 235);
+  }
+
+  .line3{
+  width: 80%;
+  border-bottom: 1px solid rgb(238, 235, 235);
+  }
+
+  .line4{
+  width: 80%;
+  border-bottom: 1px solid rgb(238, 235, 235);
+  }
+
+  .line5{
+  width: 30%;
+  border-bottom: 1px solid rgb(238, 235, 235);
   }
   .text-gradient {
     background-image: var(--accent-gradient);
@@ -75,8 +176,8 @@ import Layout from "../layouts/Layout.astro";
   }
   .social-list {
     line-height: 1.6;
-    margin: 2rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
+    margin: 1rem 0;
+    text-align: center;
     padding: 2rem;
     border-radius: 0.4rem;
     background-color: rgb(84 43 236 / 90%);
