@@ -16,18 +16,13 @@ jobs:
       - name: Install, build, and upload...
         uses: withastro/action@v0
 
-      - name: Install and Build 🔧
-        run: |
-          npm install
-          npm run build
-
-        deploy:
-          needs: build
-          runs-on: ubuntu-latest
-          environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-          steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v1
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v1
