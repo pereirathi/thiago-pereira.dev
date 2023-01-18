@@ -7,15 +7,15 @@ import Footer from '../components/Footer.astro';
   <main>
     <header>
       <div class="title">
-      <span>Hi<object data="src/assets/wave_hand.svg" width="32" name="waveHand"></object></span>
+      <span>Hi<object data="/assets/wave_hand.svg" width="32" name="waveHand"></object></span>
       <h1>
         I'm Thiago Pereira <br />
       </h1>
-      <h2><span class="text-gradient">Senior Front-end Enginner at Ze Delivery</span></h2>
+      <h2 class="text-gradient">Senior Front-end Enginner at Ze Delivery</h2>
        </div>
       <picture>
         <img
-          src="src/assets/thiago.webp"
+          src="/assets/thiago.webp"
           alt="thiago"
           decoding="async"
           loading="lazy"
@@ -51,11 +51,11 @@ import Footer from '../components/Footer.astro';
       <text>Get in Touch</text>
       <br />
       <ul>
-        <li><object data="src/assets/gmail_icon.svg" width="32" name="gmail"></object></li>
-        <li><object data="src/assets/github_icon.svg" width="32" name="github"></object></li>
+        <li><object data="/assets/gmail_icon.svg" width="32" name="gmail"></object></li>
+        <li><object data="/assets/github_icon.svg" width="32" name="github"></object></li>
         <li>
           <a href="https://www.linkedin.com/in/thiago-pereira-aa9a3817/">
-          <object data="src/assets/linkedin_icon.svg" width="32" name="linkedin"></object>
+          <object data="/assets/linkedin_icon.svg" width="32" name="linkedin"></object>
         </a>
       </li>
       </ul>
@@ -68,6 +68,14 @@ import Footer from '../components/Footer.astro';
   main {
     margin: auto;
     max-width: 100ch;
+  }
+
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0.5rem;
+    color: white;
   }
 
 
