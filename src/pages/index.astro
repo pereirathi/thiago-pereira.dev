@@ -1,131 +1,110 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="Thiago Pereira">
-  <main>
-    <header>
+  <Nav />
+  <header>
       <div class="title">
-      <span>Hi<object data="/assets/wave_hand.svg" width="32" name="waveHand"></object></span>
+      <div class="hello">
+        <span>Hi</span><object data="/assets/wave_hand.svg" width="32" name="waveHand"></object>
+      </div> 
       <h1>
         I'm Thiago Pereira <br />
       </h1>
-      <h2 class="text-gradient">Senior Front-end Enginner at Ze Delivery</h2>
-       </div>
-      <picture>
-        <img
-          src="/assets/thiago.webp"
-          alt="thiago"
-          decoding="async"
-          loading="lazy"
-        />
-      </picture>
+      <h2 class="text-gradient">Senior Front-end Enginner</h2>
+      </div>
     </header>
-    <p class="about">
-      Passionate about car racing, and a good weissbier 🍺 !
-      <br />
-      Gamer in free time and react and rust enthusiast.
-    </p>
 
-    
+    <main class="wrapper">
 
-    <section class="skills">
-      <h3>React</h3> <div class="line"/>
-      <br />
+		<div class="grid">
 
-      <h3>React Native</h3> <div class="line2"/>
-      <br />
+      <div class="skills">
+        <div class="title-sliss">Skills</div> 
 
-      <h3>Typescript</h3> <div class="line3"/>
-      <br />
+          <h3>React</h3> <div class="line"/>
+          <h3>React Native</h3> <div class="line2"/>
+          <h3>Typescript</h3> <div class="line3"/>
+          <h3>Javascript</h3> <div class="line4"/>
+          <h3>Rust</h3> <div class="line5"/>
 
-      <h3>Javascript</h3> <div class="line4"/>
-      <br />
+      </div>
 
-      <h3>Rust </h3> <div class="line5"/>
-      <br />
-    </section>
+      <div class="about">
+        <div class="title-about">About Me</div> 
+        <p>Passionate about car racing, and a good weissbier! 🍺 </p>
+        <p>Gamer in free time and react and rust enthusiast.</p>
+      </div>
 
-    <div class="social-list">
-      <text>Get in Touch</text>
-      <br />
-      <ul>
-        <li><object data="/assets/gmail_icon.svg" width="32" name="gmail"></object></li>
-        <li><object data="/assets/github_icon.svg" width="32" name="github"></object></li>
-        <li>
-          <a href="https://www.linkedin.com/in/thiago-pereira-aa9a3817/">
-          <object data="/assets/linkedin_icon.svg" width="32" name="linkedin"></object>
-        </a>
-      </li>
-      </ul>
+
+    <div class="articles">
+        <text>Articles</text>
     </div>
+
+    <div class="projects">
+      <text>projects</text>
+      <p> Projects thats I build and help to maintain</p>
+      <p> Ze Delivery Consumer App </p>
+      <p> Ze Delivery Consumer App </p>
+      <p> Ze Delivery Consumer App </p>
+      <p> Ze Delivery Consumer App </p> 
+      <p> Ze Delivery Consumer App </p>
+    </div>
+
+  </div>
     <Footer /> 
   </main>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    max-width: 100ch;
+  span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    margin-right: 0.5rem;
   }
 
-
-  span {
+  article {
+    text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0.5rem;
     color: white;
   }
 
-
-
-  @media (min-width: 1200px) {
-		 img {
-			width: 330px;
-		}
-	}
-  @media (min-width: 750px) {
-		 {
-			
-		}
-	}
   header {
     display: flex;
     flex-direction: row;
-    margin-top: 2rem;
-    justify-content: space-between;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    justify-content: center;
     width: 100%;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
     margin: 0.5rem;
     color: white;
+    text-align: center;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin: 0.5rem;
     color: white;
+    text-align: center;
   }
 
   h3 {
     font-size: 1rem;
     font-weight: 400;
-    margin: 0;
     color: white;
     width: 60%;
-  }
-  img {
-    width: 220px;
-
-    object-fit: cover;
-    background-size: cover;
-    border-radius: 1.5%;
-    align-content: flex-start;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http%3A//www.w3.org/2000/svg'xmlns%3Axlink='http%3A//www.w3.org/1999/xlink' viewBox='0 0 1280 853'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='.5'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter='url(%23b)' x='0' y='0' height='100%25' width='100%25' xlink%3Ahref='data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII='%3E%3C/image%3E%3C/svg%3E");
+    margin: 0;
   }
   p {
     color: black;
@@ -134,7 +113,7 @@ import Footer from '../components/Footer.astro';
   }
   ul {
   list-style-type: none;
-  margin: 0;
+  margin: 0; 
   padding: 0;
   }
 
@@ -143,68 +122,110 @@ import Footer from '../components/Footer.astro';
     margin: 0 1rem;
   }
 
+
+
+  .hello {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .grid {
+		display: grid;
+		grid-gap: 1rem;
+    grid-template-columns: 1fr ;
+	}
+	@media (min-width: 1200px) {
+  .grid {
+      grid-template-columns: 1fr 1fr;
+      }
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 350%;
+    background-position: 0%;
+  }
+
+
+.title-about{
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    color: black;
+    padding-bottom: 1rem;
+}
+
+
+  .title-sliss {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    padding-bottom: 1rem;
+  }
+
+
   .line{
   width: 90%;
-  border-bottom: 1px solid rgb(238, 235, 235);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgb(238, 235, 235);
   }
 
   .line2{
   width: 85%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgb(238, 235, 235);
   }
 
   .line3{
   width: 80%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgb(238, 235, 235);
   }
 
   .line4{
   width: 80%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgb(238, 235, 235);
   }
 
   .line5{
   width: 30%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgb(238, 235, 235);
   }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
+
+  .skills{
+    line-height: 1.6;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
   }
+
   .about {
     line-height: 1.6;
-    margin: 2rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
     background-color: rgb(214 243 31 / 90%);
-    padding: 2rem;
-    border-radius: 0.4rem;
-  }
-  .social-list {
-    line-height: 1.6;
-    margin: 1rem 0;
-    text-align: center;
-    padding: 2rem;
-    border-radius: 0.4rem;
-    background-color: rgb(84 43 236 / 90%);
-  }
-  .about code {
-    font-size: 0.875em;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
     font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
   }
-  .about strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
+  
+
+  .articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    line-height: 1.6;
+    background-color: rgb(84 43 236 / 90%);
   }
 </style>
