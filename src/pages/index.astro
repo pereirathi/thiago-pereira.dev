@@ -1,61 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Thiago Pereira">
   <Nav />
   <header>
-      <div class="title">
+    <div class="title">
       <div class="hello">
-        <span>Hi</span><object data="/assets/wave_hand.svg" width="32" name="waveHand"></object>
-      </div> 
+        <span>Hi,</span><object
+          text="hi"
+          data="/assets/wave_hand.svg"
+          width="32"
+          name="waveHand"></object>
+      </div>
       <h1>
         I'm Thiago Pereira <br />
       </h1>
       <h2 class="text-gradient">Senior Front-end Enginner</h2>
-      </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="wrapper">
-
-		<div class="grid">
-
+  <main class="wrapper">
+    <div class="grid">
       <div class="skills">
-        <div class="title-sliss">Skills</div> 
+        <div class="title-sliss">Skills</div>
 
-          <h3>React</h3> <div class="line"/>
-          <h3>React Native</h3> <div class="line2"/>
-          <h3>Typescript</h3> <div class="line3"/>
-          <h3>Javascript</h3> <div class="line4"/>
-          <h3>Rust</h3> <div class="line5"/>
-
+        <h3>React</h3>
+        <div class="line"></div>
+        <h3>React Native</h3>
+        <div class="line2"></div>
+        <h3>Typescript</h3>
+        <div class="line3"></div>
+        <h3>Javascript</h3>
+        <div class="line4"></div>
+        <h3>Rust</h3>
+        <div class="line5"></div>
       </div>
 
       <div class="about">
-        <div class="title-about">About Me</div> 
-        <p>Passionate about car racing, and a good weissbier! 🍺 </p>
-        <p>Gamer in free time and react and rust enthusiast.</p>
+        <div class="title-about">About Me</div>
+        <p>Passionate about car racing, and a good weissbier! 🍺</p>
+        <p>Tutor of a 2 year old kitten called luke</p>
+        <p>Gamer in free time and react ⚛️ and rust 🦀 enthusiast.</p>
       </div>
 
-
-    <div class="articles">
+      <div class="articles">
         <text>Articles</text>
-    </div>
+        <p>How was my experience build this personal site with Astro</p>
+      </div>
 
-    <div class="projects">
-      <text>projects</text>
-      <p> Projects thats I build and help to maintain</p>
-      <p> Ze Delivery Consumer App </p>
-      <p> Ze Delivery Consumer App </p>
-      <p> Ze Delivery Consumer App </p>
-      <p> Ze Delivery Consumer App </p> 
-      <p> Ze Delivery Consumer App </p>
-    </div>
+      <div class="projects">
+        <p>projects</p>
 
-  </div>
-    <Footer /> 
+        <picture>
+          <img
+            src="/assets/zeapp.webp"
+            alt="ze"
+            decoding="async"
+            loading="lazy"
+          />
+        </picture>
+
+        <picture>
+          <img
+            src="/assets/zecourirer.webp"
+            alt="ze"
+            decoding="async"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+    </div>
+    <Footer />
   </main>
 </Layout>
 
@@ -75,6 +93,13 @@ import Nav from '../components/Nav.astro';
     color: white;
   }
 
+  img {
+    width: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin: 0rem 1rem;
+  }
+
   header {
     display: flex;
     flex-direction: row;
@@ -84,16 +109,18 @@ import Nav from '../components/Nav.astro';
     width: 100%;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
     margin: 0.5rem;
+    font-family: Playfair Display;
     color: white;
     text-align: center;
   }
 
   h2 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: Montserrat;
     margin: 0.5rem;
     color: white;
     text-align: center;
@@ -110,11 +137,12 @@ import Nav from '../components/Nav.astro';
     color: black;
     font-size: large;
     font-weight: bold;
+    font-family: Montserrat;
   }
   ul {
-  list-style-type: none;
-  margin: 0; 
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
   ul li {
@@ -122,22 +150,20 @@ import Nav from '../components/Nav.astro';
     margin: 0 1rem;
   }
 
-
-
   .hello {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
   .grid {
-		display: grid;
-		grid-gap: 1rem;
-    grid-template-columns: 1fr ;
-	}
-	@media (min-width: 1200px) {
-  .grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 1200px) {
+    .grid {
       grid-template-columns: 1fr 1fr;
-      }
+    }
   }
 
   .text-gradient {
@@ -148,63 +174,63 @@ import Nav from '../components/Nav.astro';
     background-position: 0%;
   }
 
-
-.title-about{
+  .title-about {
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 800;
     text-align: center;
+    font-family: Playfair Display;
     color: black;
     padding-bottom: 1rem;
-}
-
+  }
 
   .title-sliss {
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 800;
     text-align: center;
+    font-family: Playfair Display;
     color: white;
     padding-bottom: 1rem;
   }
 
-
-  .line{
-  width: 90%;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid rgb(238, 235, 235);
+  .line {
+    width: 90%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid white;
   }
 
-  .line2{
-  width: 85%;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgb(238, 235, 235);
+  .line2 {
+    width: 85%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(238, 235, 235);
   }
 
-  .line3{
-  width: 80%;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgb(238, 235, 235);
+  .line3 {
+    width: 80%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(238, 235, 235);
   }
 
-  .line4{
-  width: 80%;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgb(238, 235, 235);
+  .line4 {
+    width: 80%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(238, 235, 235);
   }
 
-  .line5{
-  width: 30%;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgb(238, 235, 235);
+  .line5 {
+    width: 30%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(238, 235, 235);
   }
 
-  .skills{
+  .skills {
     line-height: 1.6;
     padding: 1rem 0.5rem;
+    height: 28ch;
     border-radius: 0.5rem;
     font-size: large;
   }
@@ -212,20 +238,39 @@ import Nav from '../components/Nav.astro';
   .about {
     line-height: 1.6;
     background-color: rgb(214 243 31 / 90%);
+    height: 28ch;
     padding: 1rem 0.5rem;
     border-radius: 0.5rem;
     font-size: large;
     font-weight: bold;
   }
-  
 
   .articles {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 28ch;
     padding: 1rem 0.5rem;
     border-radius: 0.5rem;
     line-height: 1.6;
     background-color: rgb(84 43 236 / 90%);
+  }
+
+  .articles p {
+    color: white;
+  }
+
+  .articles text {
+    color: white;
+  }
+  .projects {
+    line-height: 1.6;
+    padding: 1rem 0.5rem;
+    height: 28ch;
+    border-radius: 0.5rem;
+    font-size: large;
+  }
+  .projects p {
+    color: white;
   }
 </style>
