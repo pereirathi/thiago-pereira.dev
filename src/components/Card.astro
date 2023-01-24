@@ -1,0 +1,58 @@
+---
+export interface Props {
+  title: string;
+  href?: string;
+  isGreen: boolean;
+}
+
+const backgroundGreen = "rgb(214 243 31 / 90%)";
+const backgroundPurple = "rgb(84 43 236 / 90%);";
+
+const { href, title, content } = Astro.props;
+---
+
+<div class:"purple-card">
+  <h3>
+    {title}
+    <span>&rarr;</span>
+  </h3>
+  <div>
+    {content}
+  </div>
+</div>
+
+<style>
+  .purple-card {
+    line-height: 1.6;
+    background-color: rgb(214 243 31 / 90%);
+    height: 28ch;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+  }
+  .green-card {
+    line-height: 1.6;
+    background-color: rgb(84 43 236 / 90%);
+    height: 28ch;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: Playfair Display;
+    color: white;
+    padding-bottom: 1rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+  }
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent));
+  }
+</style>

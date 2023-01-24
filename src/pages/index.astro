@@ -13,7 +13,8 @@ import Nav from "../components/Nav.astro";
           text="hi"
           data="/assets/wave_hand.svg"
           width="32"
-          name="waveHand"></object>
+          name="waveHand"
+          aria-label="Hi"></object>
       </div>
       <h1>
         I'm Thiago Pereira <br />
@@ -47,12 +48,12 @@ import Nav from "../components/Nav.astro";
       </div>
 
       <div class="articles">
-        <text>Articles</text>
-        <p>How was my experience build this personal site with Astro</p>
+        <div class="title-articles">Articles</div>
+        <p>How was my experience build this personal site with Astro 2.0</p>
       </div>
 
       <div class="projects">
-        <p>projects</p>
+        <div class="title-sliss">Projects</div>
 
         <picture>
           <img
@@ -180,6 +181,15 @@ import Nav from "../components/Nav.astro";
     text-align: center;
     font-family: Playfair Display;
     color: black;
+    padding-bottom: 1rem;
+  }
+
+  .title-articles {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: Playfair Display;
+    color: white;
     padding-bottom: 1rem;
   }
 
