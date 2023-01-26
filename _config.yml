@@ -8,8 +8,6 @@ author: Thiago Pereira
 url: http://thiago-pereira.dev/
 baseurl: ""
 
-theme: jekyll-bulma
-
 exclude:
   - tmp/
   - vendor/
