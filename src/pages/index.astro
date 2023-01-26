@@ -1,19 +1,20 @@
 ---
+import Nav from "../components/Nav.astro";
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Thiago Pereira">
   <Nav />
   <header>
     <div class="title">
-      <div class="hello">
+      <div class="greetings">
         <span>Hi,</span><object
-          text="hi"
           data="/assets/wave_hand.svg"
           width="32"
-          name="waveHand"></object>
+          name="waveHand"
+          aria-label="Hi"></object>
       </div>
       <h1>
         I'm Thiago Pereira <br />
@@ -24,53 +25,54 @@ import Nav from "../components/Nav.astro";
 
   <main class="wrapper">
     <div class="grid">
+
       <div class="skills">
-        <div class="title-sliss">Skills</div>
-
-        <h3>React</h3>
-        <div class="line"></div>
-        <h3>React Native</h3>
-        <div class="line2"></div>
-        <h3>Typescript</h3>
-        <div class="line3"></div>
-        <h3>Javascript</h3>
-        <div class="line4"></div>
-        <h3>Rust</h3>
-        <div class="line5"></div>
+        <h3>Skills</h3>
+        <p>React</p>
+        <div class="lineReact"/>
+        <p>React Native</p>
+        <div class="lineReactNative"/>
+        <p>Typescript</p>
+        <div class="lineTypescript"/>
+        <p>Javascript</p>
+        <div class="lineJavascript"/>
+        <p>Rust</p>
+        <div class="lineRust"/>
       </div>
 
-      <div class="about">
-        <div class="title-about">About Me</div>
-        <p>Passionate about car racing, and a good weissbier! 🍺</p>
-        <p>Tutor of a 2 year old kitten called luke</p>
-        <p>Gamer in free time and react ⚛️ and rust 🦀 enthusiast.</p>
-      </div>
+      <Card 
+      isGreen
+      isAboutMe
+      title="About Me" 
+      />
 
-      <div class="articles">
-        <text>Articles</text>
-        <p>How was my experience build this personal site with Astro</p>
-      </div>
+      <Card 
+      isGreen={false}
+      isAboutMe={false}
+      title="Articles" 
+      />
 
       <div class="projects">
-        <p>projects</p>
+        <h3>Projects</h3>
+        <div class="screens-projects">
+          <picture>
+            <img
+              src="/assets/zeapp.webp"
+              alt="ze"
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
 
-        <picture>
-          <img
-            src="/assets/zeapp.webp"
-            alt="ze"
-            decoding="async"
-            loading="lazy"
-          />
-        </picture>
-
-        <picture>
-          <img
-            src="/assets/zecourirer.webp"
-            alt="ze"
-            decoding="async"
-            loading="lazy"
-          />
-        </picture>
+          <picture>
+            <img
+              src="/assets/zecourirer.webp"
+              alt="ze"
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
+        </div>
       </div>
     </div>
     <Footer />
@@ -79,27 +81,17 @@ import Nav from "../components/Nav.astro";
 
 <style>
   span {
-    font-size: 1.5rem;
+    font-size: var(--f-u3);
     font-weight: 500;
-    color: white;
+    color: var(--c-white);
     margin-right: 0.5rem;
   }
-
-  article {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0.5rem;
-    color: white;
-  }
-
   img {
-    width: 100px;
+    width: 120px;
     border-radius: 5px;
     object-fit: cover;
-    margin: 0rem 1rem;
+    margin: 0rem 2rem;
   }
-
   header {
     display: flex;
     flex-direction: row;
@@ -108,49 +100,13 @@ import Nav from "../components/Nav.astro";
     justify-content: center;
     width: 100%;
   }
-  h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    margin: 0.5rem;
-    font-family: Playfair Display;
-    color: white;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    font-family: Montserrat;
-    margin: 0.5rem;
-    color: white;
-    text-align: center;
-  }
-
-  h3 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: white;
-    width: 60%;
-    margin: 0;
-  }
   p {
     color: black;
     font-size: large;
     font-weight: bold;
     font-family: Montserrat;
   }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul li {
-    display: inline;
-    margin: 0 1rem;
-  }
-
-  .hello {
+  .greetings {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -160,12 +116,11 @@ import Nav from "../components/Nav.astro";
     grid-gap: 1rem;
     grid-template-columns: 1fr;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 900px) {
     .grid {
       grid-template-columns: 1fr 1fr;
     }
   }
-
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -173,104 +128,51 @@ import Nav from "../components/Nav.astro";
     background-size: 350%;
     background-position: 0%;
   }
-
-  .title-about {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    font-family: Playfair Display;
-    color: black;
-    padding-bottom: 1rem;
-  }
-
-  .title-sliss {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    font-family: Playfair Display;
-    color: white;
-    padding-bottom: 1rem;
-  }
-
-  .line {
-    width: 90%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid white;
-  }
-
-  .line2 {
-    width: 85%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgb(238, 235, 235);
-  }
-
-  .line3 {
-    width: 80%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgb(238, 235, 235);
-  }
-
-  .line4 {
-    width: 80%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgb(238, 235, 235);
-  }
-
-  .line5 {
-    width: 30%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgb(238, 235, 235);
-  }
-
   .skills {
     line-height: 1.6;
     padding: 1rem 0.5rem;
-    height: 28ch;
+    height: 30ch;
     border-radius: 0.5rem;
     font-size: large;
   }
-
-  .about {
-    line-height: 1.6;
-    background-color: rgb(214 243 31 / 90%);
-    height: 28ch;
-    padding: 1rem 0.5rem;
-    border-radius: 0.5rem;
-    font-size: large;
-    font-weight: bold;
+  .skills > div {
+    margin-top: 0.33rem;
+    margin-bottom: .66rem;
+    border-bottom: 1px solid var(--c-white)
   }
-
-  .articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 28ch;
-    padding: 1rem 0.5rem;
-    border-radius: 0.5rem;
-    line-height: 1.6;
-    background-color: rgb(84 43 236 / 90%);
+  .lineReact {
+    width: 90%;
   }
+  .lineReactNative {
+    width: 85%;
 
-  .articles p {
-    color: white;
   }
-
-  .articles text {
-    color: white;
+  .lineTypescript {
+    width: 80%;
+  }
+  .lineJavascript {
+    width: 80%;
+  }
+  .lineRust {
+    width: 25%;
+  }
+  .skills p {
+    color: var(--c-white);
+    margin: 0;
   }
   .projects {
     line-height: 1.6;
     padding: 1rem 0.5rem;
-    height: 28ch;
+    height: 30ch;
     border-radius: 0.5rem;
     font-size: large;
   }
+  .screens-projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
   .projects p {
-    color: white;
+    color: var(--c-white)
   }
 </style>
