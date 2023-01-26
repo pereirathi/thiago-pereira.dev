@@ -1,0 +1,18 @@
+title: Thiago Pereira
+
+repository: pereirathi/thiago-pereira.dev
+author: Thiago Pereira
+
+### Build settings ###
+
+url: http://thiago-pereira.dev/
+baseurl: ""
+
+theme: jekyll-bulma
+
+exclude:
+  - tmp/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - ...
