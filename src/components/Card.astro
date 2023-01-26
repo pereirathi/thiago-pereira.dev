@@ -1,45 +1,39 @@
 ---
 export interface Props {
   title: string;
-  href?: string;
   isGreen: boolean;
+  isAboutMe: boolean;
 }
 
-const backgroundGreen = "rgb(214 243 31 / 90%)";
-const backgroundPurple = "rgb(84 43 236 / 90%);";
-
-const { href, title, content } = Astro.props;
+const { title, isAboutMe, isGreen } = Astro.props;
 ---
 
-<div class:"purple-card">
+<div class:list={['purpleCard', { greenCard: isGreen }]}>
   <h3>
     {title}
-    <span>&rarr;</span>
   </h3>
-  <div>
-    {content}
-  </div>
+
+  {isAboutMe 
+    ? 
+      (
+        <div>
+        <p>Passionate about car racing, and a good weissbier! 🍺</p>
+        <p>Tutor of a 2 year old kitten called Luke</p>
+        <p>Gamer in free time and react ⚛️ and rust 🦀 enthusiast.</p>
+      </div>
+      ) 
+    : 
+      (
+        <p>How was my experience build this personal site with Astro 2.0 (working in progress)</p>
+        <div class="divisor" />
+        <p>Why I think that react native is better than Flutter (working in progress)</p>
+      )
+  }
+
 </div>
 
 <style>
-  .purple-card {
-    line-height: 1.6;
-    background-color: rgb(214 243 31 / 90%);
-    height: 28ch;
-    padding: 1rem 0.5rem;
-    border-radius: 0.5rem;
-    font-size: large;
-    font-weight: bold;
-  }
-  .green-card {
-    line-height: 1.6;
-    background-color: rgb(84 43 236 / 90%);
-    height: 28ch;
-    padding: 1rem 0.5rem;
-    border-radius: 0.5rem;
-    font-size: large;
-    font-weight: bold;
-  }
+
   h3 {
     font-size: 2rem;
     font-weight: 800;
@@ -47,12 +41,33 @@ const { href, title, content } = Astro.props;
     font-family: Playfair Display;
     color: white;
     padding-bottom: 1rem;
+    margin-top: 0;
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .link-card:is(:hover, :focus-within) {
-    background-position: 0;
+
+  p {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    font-family: Montserrat;
   }
-  .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent));
+.purpleCard {
+    line-height: 1.6;
+    background-color: rgb(84 43 236 / 90%); 
+    height: 30ch;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+  }
+  .greenCard {
+    background-color:rgb(214 243 31 / 90%);
+  }
+
+  .greenCard h3 {
+    color: black;
+  }
+  .greenCard p {
+    color: black;
   }
 </style>
