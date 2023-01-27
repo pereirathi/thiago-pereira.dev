@@ -88,10 +88,10 @@ import Footer from "../components/Footer.astro";
     margin-right: 0.5rem;
   }
   img {
-    width: 120px;
+    width: 100px;
     border-radius: 5px;
     object-fit: cover;
-    margin: 0rem 0.6rem;
+    margin: 0rem 0.5rem;
   }
   header {
     display: flex;
@@ -115,7 +115,7 @@ import Footer from "../components/Footer.astro";
   .grid {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 1fr;
+    grid-auto-columns: minmax(200px, auto);
   }
   @media (min-width: 900px) {
     .grid {
@@ -132,7 +132,7 @@ import Footer from "../components/Footer.astro";
   .skills {
     line-height: 1.6;
     padding: 1rem 0.5rem;
-    height: 30ch;
+    height: 28ch;
     border-radius: 0.5rem;
     font-size: large;
   }
@@ -142,17 +142,17 @@ import Footer from "../components/Footer.astro";
     border-bottom: 1px solid var(--c-white)
   }
   .lineReact {
-    width: 90%;
+    width: 95%;
   }
   .lineReactNative {
-    width: 85%;
+    width: 90%;
 
   }
   .lineTypescript {
-    width: 80%;
+    width: 85%;
   }
   .lineJavascript {
-    width: 80%;
+    width: 85%;
   }
   .lineRust {
     width: 25%;
@@ -164,7 +164,7 @@ import Footer from "../components/Footer.astro";
   .projects {
     line-height: 1.6;
     padding: 1rem 0.5rem;
-    height: 30ch;
+    height: 28ch;
     border-radius: 0.5rem;
     font-size: large;
   }
