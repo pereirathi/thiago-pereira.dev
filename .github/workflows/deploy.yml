@@ -1,4 +1,4 @@
-name: GitHub Pages Deploy
+name: GitHub Pages Deploy - Prod
 on:
   push:
     branches: [master]
@@ -12,16 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout your repository using git 📋
         uses: actions/checkout@v3
-      - name: Install, build, and upload your site output
+      - name: Install and build 🚀
         uses: withastro/action@v0
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: prod | deploy @ GitHub-Pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages

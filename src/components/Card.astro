@@ -33,18 +33,6 @@ const { title, isAboutMe, isGreen } = Astro.props;
 </div>
 
 <style>
-
-  h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    font-family: Playfair Display;
-    color: white;
-    padding-bottom: 1rem;
-    margin-top: 0;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
   p {
     color: white;
     font-size: large;
@@ -63,11 +51,16 @@ const { title, isAboutMe, isGreen } = Astro.props;
   .greenCard {
     background-color:rgb(214 243 31 / 90%);
   }
-
   .greenCard h3 {
     color: black;
   }
   .greenCard p {
     color: black;
+  }
+  .divisor {
+    width: 100%;
+    margin-top: 1.33rem;
+    margin-bottom: 1.33rem;
+    border-bottom: 1px solid var(--c-white)
   }
 </style>
