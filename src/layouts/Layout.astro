@@ -15,18 +15,10 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
-      as="style"
-    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 
     <meta name="description" content="Thiago Pereira's Web Site" />
     <meta
@@ -43,9 +35,10 @@ const { title } = Astro.props;
     <style is:global>
       :root {
         /* Colors */
-        --c-black: #05091e;
+        --c-black: #010101;
         --c-white: #fff;
-        --c-gray: #131212f3;
+        --c-lgray: #fafaf2;
+        --c-gray: #111216fb;
 
         /* Fonts */
         --f-u7: 4em;
@@ -64,42 +57,24 @@ const { title } = Astro.props;
           white 30%
         );
       }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
       html {
-        font-family: Playfair Display, Montserrat, system-ui, sans-serif;
+        font-family: Inconsolata, sans-serif;
         background-color: var(--c-gray);
       }
       body {
         margin: auto;
-        max-width: 100ch;
+        max-width: 130ch;
         padding: 1rem;
       }
-
-      h1 {
-        color: var(--c-white); 
-        font-size: var(--f-u7);
-        font-weight: 800;
-        text-align: center;
-        margin: 0.5rem;
-        font-family: Playfair Display;
-      }
-
-      h2 {
-        color: var(--c-white); 
-        font-size: var(--f-u4);
-        font-weight: 600;
-        text-align: center;
-        margin: 0.5rem;
-        font-family: Montserrat;
-      }
-
-      h3 {
-        color: var(--c-white);  
-        font-size: var(--f-u3);
-        font-weight: 800;
-        text-align: center;
-        margin-top: 0;
-        font-family: Playfair Display;
-     }
     
     </style>
   </body>

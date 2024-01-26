@@ -1,56 +1,50 @@
 ---
 import Nav from "../components/Nav.astro";
-import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Thiago Pereira">
   <Nav />
-  <header>
-    <div class="title">
-      <div class="greetings">
-        <span>Hi,</span><object
+    <section class="container" aria-label="About Me">
+
+        <span>Hi,</span>
+        <object
           data="/assets/wave_hand.svg"
           width="32"
           name="waveHand"
-          aria-label="Hi"></object>
-      </div>
-      <h1>
-        I'm Thiago Pereira <br />
-      </h1>
-      <h2 class="text-gradient">Senior Front-end Enginner</h2>
+          aria-label="Hi">
+        </object>
+
+
+      <div class="details" aria-label="Details">
+        <img
+          src="/assets/thiago.jpg"
+          alt="thiago"
+          decoding="async"
+          loading="lazy"
+          width="300"
+          height="400"
+        />
+        <div>
+        <h1>
+          I'm Thiago Pereira
+        </h1>
+        <h2>Senior Front-end Enginner</h2>
+        </div>
+        </div>
+        <p>
+          I started my career in 2018 as a Front-end Developer coming from the Telecom area where my last position was in one of the largest 
+          beverage delivery applications in Brazil which was an innovation arm of the largest Brazilian brewery (Amvev). 
+          In my career, I have worked in several cross-functional teams with Agile methodologies where my main activities were monitoring, 
+          maintenance, and technical refinement for other developers. I also like to share my knowledge with the team by creating good documentation 
+          and I am very motivated by innovation and sustainability. 
+        </p>
+
     </div>
-  </header>
 
   <main class="wrapper">
     <div class="grid">
-
-      <div class="skills">
-        <h3>Skills</h3>
-        <p>React</p>
-        <div class="lineReact"/>
-        <p>React Native</p>
-        <div class="lineReactNative"/>
-        <p>Typescript</p>
-        <div class="lineTypescript"/>
-        <p>Javascript</p>
-        <div class="lineJavascript"/>
-        <p>Rust</p>
-        <div class="lineRust"/>
-      </div>
-
-      <Card 
-      isGreen
-      isAboutMe
-      title="About Me" 
-      />
-
-      <Card 
-      isGreen={false}
-      isAboutMe={false}
-      title="Last Articles" 
-      />
 
       <div class="projects">
         <h3>Projects</h3>
@@ -81,18 +75,51 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <style>
-  span {
-    font-size: var(--f-u3);
-    font-weight: 500;
-    color: var(--c-white);
-    margin-right: 0.5rem;
+  .container {
+    span {
+      color: var(--c-white);
+      font-size: var(--f-u3);
+      font-weight: 500;
+      text-align: left;
+      margin:0;
+    }
   }
-  img {
-    width: 100px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin: 0rem 0.5rem;
+
+  .details{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      border-radius: 100vmax;
+      height: 430px;
+      width: min(300px, 100%);
+      box-shadow: 0 0 0 0.2px var(--c-black);
+      object-fit: cover;
+      object-position: center;
+      margin: 0 2rem;
+    }
   }
+
+    h1 {
+        color: var(--c-lgray); 
+        font-size: var(--f-u6);
+        font-weight: 900;
+        text-align: left;
+        line-height: 80px;
+        margin:0;
+      }
+
+    h2 {
+        color: var(--c-white); 
+        font-size: var(--f-u3);
+        font-weight: 500;
+        text-align: left;
+        margin:0;
+      }
+
+
   header {
     display: flex;
     flex-direction: row;
@@ -101,22 +128,19 @@ import Footer from "../components/Footer.astro";
     justify-content: center;
     width: 100%;
   }
+
+  span {
+    color: var(--c-white);
+  }
   p {
-    color: black;
-    font-size: large;
-    font-weight: bold;
-    font-family: Montserrat;
+    color: var(--c-white);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    padding: 1rem 0.5rem;
+    height: 28ch;
   }
-  .greetings {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .grid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-auto-columns: minmax(200px, auto);
-  }
+
+
   @media (min-width: 900px) {
     .grid {
       grid-template-columns: 1fr 1fr;
