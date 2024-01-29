@@ -1,59 +1,52 @@
 ---
 import Nav from "../components/Nav.astro";
-import Card from "../components/Card.astro";
-import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Thiago Pereira">
+<MainLayout title="Thiago Pereira">
   <Nav />
-  <header>
-    <div class="title">
-      <div class="greetings">
-        <span>Hi,</span><object
+    <section class="container" aria-label="About Me">
+        <span>Hi,</span>
+        <object
           data="/assets/wave_hand.svg"
           width="32"
           name="waveHand"
-          aria-label="Hi"></object>
-      </div>
-      <h1>
-        I'm Thiago Pereira <br />
-      </h1>
-      <h2 class="text-gradient">Senior Front-end Enginner</h2>
+          aria-label="Hi">
+        </object>
+
+      <div class="details" aria-label="Details">
+        <img
+          src="/assets/thiago.jpg"
+          alt="thiago"
+          decoding="async"
+          loading="lazy"
+          width="300"
+          height="400"
+        />
+        <div>
+        <h1>
+          I'm Thiago Pereira
+        </h1>
+        <h2>Senior Front-end Enginner,</h2>
+        <h2>based in Lisbon.</h2>
+        </div>
+        </div>
     </div>
-  </header>
 
   <main class="wrapper">
+
     <div class="grid">
-
-      <div class="skills">
-        <h3>Skills</h3>
-        <p>React</p>
-        <div class="lineReact"/>
-        <p>React Native</p>
-        <div class="lineReactNative"/>
-        <p>Typescript</p>
-        <div class="lineTypescript"/>
-        <p>Javascript</p>
-        <div class="lineJavascript"/>
-        <p>Rust</p>
-        <div class="lineRust"/>
-      </div>
-
-      <Card 
-      isGreen
-      isAboutMe
-      title="About Me" 
-      />
-
-      <Card 
-      isGreen={false}
-      isAboutMe={false}
-      title="Last Articles" 
-      />
-
+      <h3>About Me</h3>
+      <p>
+        I started my career in 2018 as a Front-end Developer coming from the Telecom area where my last position was in one of the largest 
+        beverage delivery applications in Brazil which was an innovation arm of the largest Brazilian brewery (AmBev). 
+        In my career, I have worked in several cross-functional teams with Agile methodologies where my main activities were monitoring, 
+        maintenance, and technical refinement for other developers. I also like to share my knowledge with the team by creating good documentation 
+        and I am very motivated by innovation and sustainability. 
+      </p>
       <div class="projects">
-        <h3>Projects</h3>
+        <h3>Mobile Projects</h3>
         <div class="screens-projects">
           <picture>
             <img
@@ -63,7 +56,7 @@ import Footer from "../components/Footer.astro";
               loading="lazy"
             />
           </picture>
-          <p>2.75 millions  monthly customers</p>
+          <p>+3 millions  monthly customers</p>
           <picture>
             <img
               src="/assets/zecourirer.webp"
@@ -78,105 +71,104 @@ import Footer from "../components/Footer.astro";
     </div>
     <Footer />
   </main>
-</Layout>
+</MainLayout>
 
 <style>
-  span {
-    font-size: var(--f-u3);
-    font-weight: 500;
-    color: var(--c-white);
-    margin-right: 0.5rem;
+  .container {
+    margin: 1rem 0;
+    span {
+      color: var(--c-white);
+      font-size: var(--f-u3);
+      font-weight: 500;
+      text-align: left;
+      margin:0;
+    }
   }
-  img {
-    width: 100px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin: 0rem 0.5rem;
-  }
-  header {
+  .details{
     display: flex;
-    flex-direction: row;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    justify-content: center;
-    width: 100%;
-  }
-  p {
-    color: black;
-    font-size: large;
-    font-weight: bold;
-    font-family: Montserrat;
-  }
-  .greetings {
-    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+
+    img {
+      border-radius: 100vmax;
+      height: 430px;
+      width: min(300px, 100%);
+      box-shadow: 0 0 0 0.2px var(--c-black);
+      object-fit: cover;
+      object-position: center;
+      margin: 0 2rem;
+    }
   }
-  .grid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-auto-columns: minmax(200px, auto);
+
+  h1 {
+    color: var(--c-lgray); 
+    font-size: var(--f-u6);
+    font-weight: 900;
+    text-align: left;
+    line-height: 80px;
+    margin:0;
   }
-  @media (min-width: 900px) {
+
+  h2 {
+    color: var(--c-white); 
+    font-size: var(--f-u3);
+    font-weight: 500;
+    text-align: left;
+    padding: 0.2rem 0;
+    margin:0;
+  }
+
+  h3 {
+    color: var(--c-white); 
+    font-size: var(--f-u3);
+    font-weight: 500;
+    text-align: left;
+    margin: 1.5rem 0;
+  }
+
+
+  span {
+    color: var(--c-white);
+  }
+  p {
+    color: var(--c-white);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    padding: 1rem 0.5rem;
+    height: 24ch;
+  }
+  @media (max-width: 600px) {
     .grid {
       grid-template-columns: 1fr 1fr;
     }
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 350%;
-    background-position: 0%;
-  }
-  .skills {
-    line-height: 1.6;
-    padding: 1rem 0.5rem;
-    height: 28ch;
-    border-radius: 0.5rem;
-    font-size: large;
-  }
-  .skills > div {
-    margin-top: 0.33rem;
-    margin-bottom: .66rem;
-    border-bottom: 1px solid var(--c-white)
-  }
-  .lineReact {
-    width: 95%;
-  }
-  .lineReactNative {
-    width: 90%;
+    .details{
+      img {
+        border-radius: 100vmax;
+        height: 370px;
+        width: min(250px, 100%);
+        box-shadow: 0 0 0 0.2px var(--c-black);
+        object-fit: cover;
+        object-position: center;
+        margin: auto;
+      }
+    }
+  } 
 
-  }
-  .lineTypescript {
-    width: 85%;
-  }
-  .lineJavascript {
-    width: 85%;
-  }
-  .lineRust {
-    width: 25%;
-  }
-  .skills p {
-    color: var(--c-white);
-    margin: 0;
-  }
-  .projects {
-    line-height: 1.6;
-    padding: 1rem 0.5rem;
-    height: 28ch;
-    border-radius: 0.5rem;
-    font-size: large;
-  }
   .screens-projects {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    h3 {
+      margin-bottom: 1rem;
+    }
   }
+
   .screens-projects p {
     color: var(--c-white);
     font-size: 0.75em;
     margin-top: 2rem;
     margin-bottom: 0;
+    align-self: center;
   }
 </style>
