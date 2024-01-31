@@ -87,20 +87,19 @@ import Footer from "../components/Footer.astro";
   .details{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
 
     img {
       border-radius: 100vmax;
-      height: 430px;
-      width: min(300px, 100%);
-      box-shadow: 0 0 0 0.2px var(--c-black);
+      height: 340px;
+      width: min(240px, 100%);
+      box-shadow: var(--shadow-lg);
       object-fit: cover;
       object-position: center;
-      margin: 0 2rem;
+      margin-right: 2rem;
     }
   }
-
   h1 {
     color: var(--c-lgray); 
     font-size: var(--f-u6);
@@ -109,7 +108,6 @@ import Footer from "../components/Footer.astro";
     line-height: 80px;
     margin:0;
   }
-
   h2 {
     color: var(--c-white); 
     font-size: var(--f-u3);
@@ -118,7 +116,6 @@ import Footer from "../components/Footer.astro";
     padding: 0.2rem 0;
     margin:0;
   }
-
   h3 {
     color: var(--c-white); 
     font-size: var(--f-u3);
@@ -126,8 +123,6 @@ import Footer from "../components/Footer.astro";
     text-align: left;
     margin: 2rem 0;
   }
-
-
   span {
     color: var(--c-white);
   }
@@ -166,13 +161,11 @@ import Footer from "../components/Footer.astro";
     }
     .screens-projects {
       img {
-
         width: min(200px, 100%);
         box-shadow: 0 0 0 0.2px var(--c-black);
       }
-  }
+    }
   } 
-
   .screens-projects {
     display: flex;
     flex-direction: row;
@@ -183,7 +176,6 @@ import Footer from "../components/Footer.astro";
       margin-bottom: 1rem;
     }
   }
-
   .screens-projects p {
     color: var(--c-white);
     font-size: 0.80em;
