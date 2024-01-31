@@ -89,6 +89,7 @@ import Footer from "../components/Footer.astro";
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 2rem 0;
 
     img {
       border-radius: 100vmax;
@@ -152,11 +153,16 @@ import Footer from "../components/Footer.astro";
       grid-template-columns: 1fr 1fr;
     }
     .details{
-      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem 0;
       img {
         height: 370px;
         width: min(250px, 100%);
-        box-shadow: 0 0 0 0.2px var(--c-black);
+        box-shadow: var(--shadow-lg);
+        margin: 1rem 0;
       }
     }
     .screens-projects {
