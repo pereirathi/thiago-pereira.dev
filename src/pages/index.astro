@@ -6,44 +6,46 @@ import Footer from "../components/Footer.astro";
 
 <MainLayout title="Thiago Pereira">
   <Nav />
-    <section class="container" aria-label="About Me">
-        <span>Hi,</span>
-        <object
-          data="/assets/wave_hand.svg"
-          width="32"
-          name="waveHand"
-          aria-label="Hi">
-        </object>
+  <section class="container" aria-label="About Me">
+    <span>Hi,</span>
+    <object
+      data="/assets/wave_hand.svg"
+      width="32"
+      name="waveHand"
+      aria-label="Hi"
+    >
+    </object>
 
-      <div class="details" aria-label="Details">
-        <img
-          src="/assets/thiago.jpg"
-          alt="thiago"
-          decoding="async"
-          loading="lazy"
-          width="300"
-          height="400"
-        />
-        <div>
-        <h1>
-          I'm Thiago Pereira
-        </h1>
+    <div class="details" aria-label="Details">
+      <img
+        src="/assets/thiago.jpg"
+        alt="thiago"
+        decoding="async"
+        loading="lazy"
+        width="300"
+        height="400"
+      />
+      <div>
+        <h1>I'm Thiago Pereira</h1>
         <h2>Senior Front-end Enginner,</h2>
         <h2>based in Lisbon.</h2>
-        </div>
-        </div>
+      </div>
     </div>
+  </section>
 
   <main class="wrapper">
-
     <div class="grid">
       <h3>About Me</h3>
       <p>
-        I started my career in 2018 as a Front-end Developer coming from the Telecom area where my last position was in one of the largest 
-        beverage delivery applications in Brazil which was an innovation arm of the largest Brazilian brewery (AmBev). 
-        In my career, I have worked in several cross-functional teams with Agile methodologies where my main activities were monitoring, 
-        maintenance, and technical refinement for other developers. I also like to share my knowledge with the team by creating good documentation 
-        and I am very motivated by innovation and sustainability. 
+        I started my career in 2018 as a Front-end Developer coming from the
+        Telecom area where my last position was in one of the largest beverage
+        delivery applications in Brazil which was an innovation arm of the
+        largest Brazilian brewery (AmBev). In my career, I have worked in
+        several cross-functional teams with Agile methodologies where my main
+        activities were monitoring, maintenance, and technical refinement for
+        other developers. I also like to share my knowledge with the team by
+        creating good documentation and I am very motivated by innovation and
+        sustainability.
       </p>
       <div class="projects">
         <h3>Mobile Projects</h3>
@@ -56,7 +58,7 @@ import Footer from "../components/Footer.astro";
               loading="lazy"
             />
           </picture>
-          <p>+3 millions  monthly customers</p>
+          <p>+3 millions monthly customers</p>
           <picture>
             <img
               src="/assets/zecourirer.webp"
@@ -81,10 +83,10 @@ import Footer from "../components/Footer.astro";
       font-size: var(--f-u3);
       font-weight: 500;
       text-align: left;
-      margin:0;
+      margin: 0;
     }
   }
-  .details{
+  .details {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -102,23 +104,23 @@ import Footer from "../components/Footer.astro";
     }
   }
   h1 {
-    color: var(--c-lgray); 
+    color: var(--c-lgray);
     font-size: var(--f-u6);
     font-weight: 900;
     text-align: left;
     line-height: 80px;
-    margin:0;
+    margin: 0;
   }
   h2 {
-    color: var(--c-white); 
+    color: var(--c-white);
     font-size: var(--f-u3);
     font-weight: 500;
     text-align: left;
     padding: 0.2rem 0;
-    margin:0;
+    margin: 0;
   }
   h3 {
-    color: var(--c-white); 
+    color: var(--c-white);
     font-size: var(--f-u3);
     font-weight: 500;
     text-align: left;
@@ -144,7 +146,7 @@ import Footer from "../components/Footer.astro";
     h1 {
       font-size: var(--f-u4);
       line-height: 60px;
-      margin-top: 1rem;;
+      margin-top: 1rem;
     }
     h2 {
       font-size: var(--f-u2);
@@ -152,7 +154,7 @@ import Footer from "../components/Footer.astro";
     .grid {
       grid-template-columns: 1fr 1fr;
     }
-    .details{
+    .details {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -171,7 +173,7 @@ import Footer from "../components/Footer.astro";
         box-shadow: 0 0 0 0.2px var(--c-black);
       }
     }
-  } 
+  }
   .screens-projects {
     display: flex;
     flex-direction: row;
@@ -184,7 +186,7 @@ import Footer from "../components/Footer.astro";
   }
   .screens-projects p {
     color: var(--c-white);
-    font-size: 0.80em;
+    font-size: 0.8em;
     height: auto;
     margin-top: 2rem;
     margin-bottom: 0;
